@@ -1,0 +1,23 @@
+<ul>
+  {{#each model as |post|}}
+    <li data-test="post">
+      {{#link-to "post" post.id}}
+        {{post.title}}
+      {{/link-to}}
+
+      <button
+        type="button"
+        data-test="delete-post"
+        onclick={{action "deletePost" post}}
+      >
+        Delete
+      </button>
+
+      {{#link-to "edit" post.id}}
+        Edit
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+
+{{outlet}}
