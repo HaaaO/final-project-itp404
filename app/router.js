@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('post', { path: '/movie-diaries/:id' });
   this.route('create', { path: '/movie-diaries/new' });
   this.route('edit', { path: '/movie-diaries/:id/edit' });
+  this.route('contact');
 });
 
 export default Router;

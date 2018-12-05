@@ -1,12 +1,14 @@
+<div class = "container">
 <form onsubmit={{action "createPost"}}>
-  <div>
-    <label for="title">Title</label>
-    {{input type="text" id="title" value=title}}
+  <div class="form-group">
+    <label for="formGroupExampleInput">Title</label>
+    {{input type="text" class="form-control"  id="title" value=title}}
   </div>
-  <div>
-    <label for="body">Post</label>
-    {{textarea id="body" rows="8" cols="80" value=body}}
+    <div class="form-group">
+    <label for="formGroupExampleInput">Post</label>
+    {{textarea id="body" class="form-control"  rows="8" cols="80" value=body}}
   </div>
 
   <button type="submit" data-test="publish">Publish</button>
 </form>
+</div>

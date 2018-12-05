@@ -4,6 +4,9 @@ export default Factory.extend({
   id(i) {
     return i + 1;
   },
+  type() {
+    return "horror";
+  },
   title(i) {
     return `Post ${i + 1}`;
   },

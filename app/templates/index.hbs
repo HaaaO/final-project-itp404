@@ -1,21 +1,19 @@
 <ul>
   {{#each model as |post|}}
-    <li data-test="post">
+
+    <li class="container" data-test="post">
       {{#link-to "post" post.id}}
         {{post.title}}
       {{/link-to}}
 
-      <button
-        type="button"
-        data-test="delete-post"
-        onclick={{action "deletePost" post}}
-      >
-        Delete
-      </button>
 
+      <AsyncButton  data-test="delete-post" onclick={{action "deletePost" post}}/>
       {{#link-to "edit" post.id}}
         Edit
       {{/link-to}}
+       <div>Type: {{post.type}}</div>
+       <div>Body: {{post.body}}</div>
+
     </li>
   {{/each}}
 </ul>

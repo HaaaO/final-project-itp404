@@ -1,11 +1,20 @@
-<nav>
-  {{#link-to "index"}}
-    Home
-  {{/link-to}}
 
-  {{#link-to "create"}}
-    Write a post
-  {{/link-to}}
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+
+{{#bs-navbar type=type backgroundColor=bg-primary collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
+   <div class="navbar-header">
+    {{#link-to "index" class="navbar-brand"}}Movie Diary{{/link-to}}
+  </div>
+  {{#navbar.content}}
+    {{#navbar.nav as |nav|}}
+      {{#nav.item}}{{#nav.link-to "index"}}Home{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to "create"}}create{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to "contact"}}contact{{/nav.link-to}}{{/nav.item}}
+
+    {{/navbar.nav}}
+  {{/navbar.content}}
+{{/bs-navbar}}
 </nav>
+
 
 {{outlet}}
