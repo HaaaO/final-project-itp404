@@ -1,15 +1,12 @@
 <div class="container">
-
   <h1>About</h1>
-
-  <a> Movie was created {{moment-from '1888-10-14'}} </a>
-
+  <a> Movie was created {{moment-from "1888-10-14"}} </a>
   {{#bs-carousel
     nextControlIcon="glyphicon glyphicon-chevron-right"
     nextControlLabel="Suivant"
     prevControlIcon="glyphicon glyphicon-chevron-left"
     prevControlLabel="Précédent"
-    as |car|
+  as |car|
   }}
     {{#car.slide}}
       <img
