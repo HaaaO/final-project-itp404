@@ -40,6 +40,18 @@ module('Acceptance | posts', function(hooks) {
     assert.dom('[data-test="post-body"]').hasText('I love testing!');
   });
 
+  test('editting a post', async function(assert) {
+    server.createList('movie-diary', 10);
+    await visit('/movie-diaries/1/edit');
+    await fillIn('#title', 'Intro to testing');
+
+    await click('[data-test="publish"]');
+
+    assert.equal(currentURL(), '/movie-diaries/1');
+    assert.dom('[data-test="post-title"]').hasText('Intro to testing');
+
+  });
+
   test('visiting / displays a list of posts', async function(assert) {
     server.createList('movie-diary', 10);
 

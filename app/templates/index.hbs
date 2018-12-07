@@ -1,21 +1,25 @@
-<ul>
-  {{#each model as |post|}}
-
-    <li class="container" data-test="post">
-      {{#link-to "post" post.id}}
-        {{post.title}}
-      {{/link-to}}
 
 
-      <AsyncButton  data-test="delete-post" onclick={{action "deletePost" post}}/>
-      {{#link-to "edit" post.id}}
-        Edit
-      {{/link-to}}
-       <div>Type: {{post.type}}</div>
-       <div>Body: {{post.body}}</div>
+<div class = "container">
+  <div class= "row mb-9">
+    <ul>
+      {{#each model as |post|}}
 
-    </li>
-  {{/each}}
-</ul>
+        <li class="jumbotron" data-test="post">
 
+          {{#link-to "post" post.id}}
+            {{post.title}}
+          {{/link-to}}
+          <AsyncButton  data-test="delete-post" onclick={{action "deletePost" post}}/>
+          {{#link-to "edit" post.id}}
+            Edit
+          {{/link-to}}
+          <div>Type: {{post.type}}</div>
+          <div>Body: {{truncate-text post.body 70}}</div>
+
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
 {{outlet}}

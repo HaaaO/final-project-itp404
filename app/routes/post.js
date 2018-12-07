@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  title: 'Please enjoy this post',
+  title: 'diary - moive diary',
   model(params) {
     return this.store.findRecord('movie-diary', params.id);
   }

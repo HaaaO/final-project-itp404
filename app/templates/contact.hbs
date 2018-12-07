@@ -1,13 +1,57 @@
 <div class="container">
 
-<h1>About</h1>
-The Moive Diary
-<h1>Contact Me</h1>
-{{#bs-form onSubmit=(action "sendMail") model=this as |form|}}
-  {{form.element controlType="email" label="Email" placeholder="Email" property="email" required=true}}
-  {{form.element controlType="textarea" label="Comments" property="comments"}}
-  {{bs-button defaultText="Submit" type="primary" buttonType="submit"}}
-{{/bs-form}}
+  <h1>About</h1>
+
+  <a> Movie was created {{moment-from '1888-10-14'}} </a>
+
+  {{#bs-carousel
+    nextControlIcon="glyphicon glyphicon-chevron-right"
+    nextControlLabel="Suivant"
+    prevControlIcon="glyphicon glyphicon-chevron-left"
+    prevControlLabel="Précédent"
+    as |car|
+  }}
+    {{#car.slide}}
+      <img
+        alt="First slide"
+        src="https://i1.wp.com/headsup.boyslife.org/files/2014/06/RACE-HORSE-MOVIE.jpg"
+      >
+    {{/car.slide}}
+    {{#car.slide}}
+      <img
+        alt="Second slide"
+        src="http://www.indiamarks.com/wp-content/uploads/The-First-movies1.jpg"
+      >
+    {{/car.slide}}
+    {{#car.slide}}
+      <img
+        alt="Third slide"
+        src="https://cdn20.patchcdn.com/users/22924509/20180619/041753/styles/T800x600/public/processed_images/jag_cz_movie_theater_retro_shutterstock_594132752-1529438777-6045.jpg"
+      >
+    {{/car.slide}}
+  {{/bs-carousel}}
+
+
+  <h1>Contact Me</h1>
+  {{#bs-form onSubmit=(action "sendMail") model=this as |form|}}
+    {{form.element
+      controlType="email"
+      label="Email"
+      placeholder="Email"
+      property="email"
+      required=true
+    }}
+    {{form.element
+      controlType="textarea"
+      label="Comments"
+      property="comments"
+    }}
+    {{bs-button
+      defaultText="Submit"
+      type="primary"
+      buttonType="submit"
+    }}
+  {{/bs-form}}
 
 
 </div>

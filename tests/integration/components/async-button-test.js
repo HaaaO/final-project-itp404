@@ -12,7 +12,7 @@ module('Integration | Component | async-button', function(hooks) {
 
     await render(hbs`{{async-button}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.equal(this.element.textContent.trim(), 'Delete');
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module('Integration | Component | async-button', function(hooks) {
       {{/async-button}}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'Delete');
   });
 });

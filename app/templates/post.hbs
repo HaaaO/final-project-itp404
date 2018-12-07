@@ -1,2 +1,12 @@
-<h1 data-test="post-title">{{model.title}}</h1>
-<p data-test="post-body">{{model.body}}</p>
+{{#bs-alert type="success"}}
+  <strong>Well done!</strong> You successfully updated this diary at {{now}}.
+{{/bs-alert}}
+
+<div class = "container">
+
+
+
+  <h1 class="form-group" data-test="post-title">{{model.title}}</h1>
+  <p class="form-group" data-test="post-body">{{model.body}}</p>
+
+</div>

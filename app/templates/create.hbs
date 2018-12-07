@@ -1,14 +1,17 @@
 <div class = "container">
-<form onsubmit={{action "createPost"}}>
-  <div class="form-group">
-    <label for="formGroupExampleInput">Title</label>
-    {{input type="text" class="form-control"  id="title" value=title}}
-  </div>
-    <div class="form-group">
-    <label for="formGroupExampleInput">Post</label>
-    {{textarea id="body" class="form-control"  rows="8" cols="80" value=body}}
-  </div>
+  <form onsubmit={{action "createPost"}}>
 
-  <button type="submit" data-test="publish">Publish</button>
-</form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Title</label>
+      {{input type="text" class="form-control"  id="title" value=title}}
+
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Post</label>
+      {{textarea id="body" class="form-control"  rows="8" cols="80" value=body}}
+      <CheckEmpty @text={{body}}/>
+    </div>
+
+    <button type="submit" data-test="publish">Publish</button>
+  </form>
 </div>
